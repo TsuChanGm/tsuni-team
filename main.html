@@ -1,43 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tsuni Team's bot</title>
+  <title>Tsuni Team's Bot</title>
   <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling */
     body {
       font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #1a202c; /* Dark theme */
+      color: #e2e8f0; /* Light text */
+      padding: 20px;
     }
+
+    /* Tab styling */
     .tab {
       display: flex;
-      cursor: pointer;
-      background-color: #f1f1f1;
-      padding: 10px;
+      justify-content: center;
+      background-color: #2d3748;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
     }
+
     .tab div {
       flex: 1;
       text-align: center;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-bottom: none;
-    }
-    .tab div.active {
-      background-color: #fff;
+      padding: 15px 20px;
+      cursor: pointer;
+      color: #a0aec0; /* Muted text color */
       font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
     }
+
+    .tab div.active {
+      background-color: #2b6cb0; /* Active tab color */
+      color: #fff;
+    }
+
+    .tab div:hover {
+      background-color: #4a5568;
+      color: #e2e8f0;
+    }
+
+    /* Tab content styling */
     .tab-content {
-      border: 1px solid #ccc;
-      padding: 20px;
-      margin-top: -1px;
+      border: 1px solid #2d3748;
+      background-color: #2d3748;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+
     .hidden {
       display: none;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      color: #63b3ed; /* Light blue for headings */
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      text-align: center;
+      color: #e2e8f0;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1em;
+      text-align: center;
+      color: #a0aec0;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
+  <!-- Tabs -->
   <div class="tab">
     <div id="terms-tab" class="active" onclick="showTab('terms')">Terms of Service</div>
     <div id="privacy-tab" onclick="showTab('privacy')">Privacy Policy</div>
   </div>
+
+  <!-- Terms of Service Content -->
   <div id="terms-content" class="tab-content">
     <h1>Agreement to Terms</h1>
     <h3>This Terms of Service Agreement is entered into between Bot Owner and the User of the My Little Talk Guy Discord bot.</h3>
@@ -63,6 +118,8 @@
       9. Entire Agreement: This Agreement constitutes the entire agreement between the parties.
     </p>
   </div>
+
+  <!-- Privacy Policy Content -->
   <div id="privacy-content" class="tab-content hidden">
     <h1>Privacy Policy</h1>
     <h3>This Privacy Policy governs the collection, use, and sharing of personal information by My Little Talk Guy, a Discord bot developed by Tsu. By using this bot, you agree to the terms of this Privacy Policy.</h3>
